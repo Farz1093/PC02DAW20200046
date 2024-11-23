@@ -7,12 +7,7 @@
       label="Sort by"
       outlined
     />
-    <q-btn
-      type="submit"
-      label="Apply Filters"
-      color="primary"
-      @click="applyFilters"
-    />
+    <q-btn type="submit" label="Apply Filters" color="primary" />
   </q-form>
 </template>
 
@@ -23,15 +18,16 @@ export default {
       query: "",
       sort_by: "popularity.desc",
       sortOptions: [
-        { label: "Popularity Desc", value: "popularity.desc" },
-        { label: "Popularity Asc", value: "popularity.asc" },
-        { label: "Rating Desc", value: "vote_average.desc" },
-        { label: "Rating Asc", value: "vote_average.asc" },
+        { label: "Menos Populares", value: "popularity.desc" },
+        { label: "Más Populares", value: "popularity.asc" },
+        { label: "Menor Rating", value: "vote_average.desc" },
+        { label: "Mayor Rating", value: "vote_average.asc" },
       ],
     };
   },
   methods: {
-    applyFilters() {
+    applyFilters(event) {
+      event.preventDefault();
       this.$emit("filters-changed", {
         query: this.query,
         sort_by: this.sort_by,

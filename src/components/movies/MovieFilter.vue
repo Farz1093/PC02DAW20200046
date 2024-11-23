@@ -23,7 +23,7 @@ export default {
       query: "",
       sort_by: "popularity.desc",
       sortOptions: [
-        { label: "Popularity Desc", value: "popularidad desc" },
+        { label: "Popularity Desc", value: "popularity.desc" },
         { label: "Popularity Asc", value: "popularity.asc" },
         { label: "Rating Desc", value: "vote_average.desc" },
         { label: "Rating Asc", value: "vote_average.asc" },
